@@ -32,10 +32,12 @@ function App() {
         textBoxRef.current.disabled = false
         textBoxRef.current.focus()
     }
+
     
     function endGame() {
         setIsTimeRunning(false)
-        setWordCount(calculateWordCount(text))
+		setTimeRemaining(0)
+        setWordCount(0)
     }
 
     useEffect(() => {
@@ -58,12 +60,15 @@ function App() {
             		<h1> Typing Game</h1>
 						<div class = "header">
 						<h3> Enter how many seconds you would like to type, and then press start to begin! </h3>
-						<div class="button-section">
-							<form> <label> Enter time </label>
+
+							<form> <label> Enter time in seconds</label>
 							<input type = "text" value = {input} onChange = {handleInputChange} />
 							</form>
-            				<button onClick={startGame} disabled={isTimeRunning}> Start </button>
-						</div>
+
+							<div class="button-section">
+            					<button onClick={startGame} disabled={isTimeRunning}> Start </button>
+            					<button class=" button quit-button" onClick={endGame} > Quit </button>
+							</div>
 						</div>
 				</div>
 			</div>
@@ -84,4 +89,3 @@ function App() {
 }
 
 export default App
-

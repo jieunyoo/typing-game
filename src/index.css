@@ -35,12 +35,17 @@ html, body {
 }
 button {
     display: block;
-    margin: 20px auto;
 	background-color: #008CBA;
+	margin: 10px auto;
+	width: 6em;
 	color:white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 20px;
     text-transform: uppercase;
+}
+
+.quit-button{
+	background-color: #f44336;
 }
 
 button:disabled {
