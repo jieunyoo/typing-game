@@ -48,7 +48,9 @@ function App() {
         }
     }, [timeRemaining, isTimeRunning,input])
     
-			let wordCountFactor = 60/input;
+	let wordCountFactor = 0;
+	if (input == 0) { wordCountFactor = 0 } else { wordCountFactor = 60/input};
+
     return (
         <div>
 			<div class="jumbotron jumbotron-fluid">
@@ -75,7 +77,7 @@ function App() {
 		<div class = "game-details">
             <h4>Time remaining: {timeRemaining}</h4>
             <h1>Word count: {wordCount}</h1>
-			<h4> wpm: {wordCountFactor*wordCount} </h4>
+			<h4> Words per minute (WPM): { wordCountFactor*wordCount} </h4>
 		</div>
         </div>
     )
