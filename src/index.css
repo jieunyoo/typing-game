@@ -22,8 +22,7 @@ html, body {
 }
 
 .button-section {
-	padding: 20px;
-
+	padding: 10px;
 }
 
 .game-details {
@@ -33,7 +32,7 @@ html, body {
 }
 button {
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
 	background-color: #008CBA;
 	color:white;
     border: none;

@@ -48,13 +48,14 @@ function App() {
         }
     }, [timeRemaining, isTimeRunning,input])
     
+			let wordCountFactor = 60/input;
     return (
         <div>
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
             		<h1> Typing Game</h1>
 						<div class = "header">
-						<h3> Enter for how many seconds you would like to type, and then press start to begin! </h3>
+						<h3> Enter how many seconds you would like to type, and then press start to begin! </h3>
 						<div class="button-section">
 							<form> <label> Enter time </label>
 							<input type = "text" value = {input} onChange = {handleInputChange} />
@@ -74,7 +75,7 @@ function App() {
 		<div class = "game-details">
             <h4>Time remaining: {timeRemaining}</h4>
             <h1>Word count: {wordCount}</h1>
-			<h4> wpm: {wordCount*6} </h4>
+			<h4> wpm: {wordCountFactor*wordCount} </h4>
 		</div>
         </div>
     )
