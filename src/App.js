@@ -68,6 +68,7 @@ function App() {
 				</div>
 			</div>
 
+            <h1>Time remaining: {timeRemaining}</h1>
             <textarea
                 ref={textBoxRef}
                 onChange={handleChange}
@@ -75,9 +76,8 @@ function App() {
                 disabled={!isTimeRunning}
             />
 		<div class = "game-details">
-            <h4>Time remaining: {timeRemaining}</h4>
             <h1>Word count: {wordCount}</h1>
-			<h4> Words per minute (WPM): { wordCountFactor*wordCount} </h4>
+			<h1> Words per minute: { wordCountFactor*wordCount} </h1>
 		</div>
         </div>
     )
