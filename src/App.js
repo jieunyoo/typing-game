@@ -44,10 +44,10 @@ function App() {
 
 
 	function clearGame() {
+		setValue(0)
         setIsTimeRunning(false)
 		setTimeRemaining(0)
         setWordCount(0)
-		setValue("")
 	}
 
 
