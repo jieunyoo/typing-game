@@ -26,7 +26,9 @@ function App() {
     }
     
     function startGame() {
-        setIsTimeRunning(true)
+        if (setIsTimeRunning(false)) {setText("")};
+		
+		setIsTimeRunning(true)
         setTimeRemaining(input)
         setText("")
         textBoxRef.current.disabled = false
@@ -40,6 +42,15 @@ function App() {
         setWordCount(0)
     }
 
+
+	function clearGame() {
+        setIsTimeRunning(false)
+		setTimeRemaining(0)
+        setWordCount(0)
+		setValue("")
+	}
+
+
     useEffect(() => {
         if(isTimeRunning && timeRemaining > 0) {
             setTimeout(() => {
@@ -51,7 +62,7 @@ function App() {
     }, [timeRemaining, isTimeRunning,input])
     
 	let wordCountFactor = 0;
-	if (input == 0) { wordCountFactor = 0 } else { wordCountFactor = 60/input};
+	if (input === 0) { wordCountFactor = 0 } else { wordCountFactor = 60/input};
 
     return (
         <div>
@@ -61,13 +72,14 @@ function App() {
 						<div class = "header">
 						<h3> Enter how many seconds you would like to type, and then press start to begin! </h3>
 
-							<form> <label> Enter time in seconds</label>
-							<input type = "text" value = {input} onChange = {handleInputChange} />
+							<form id="myInput"> <label> Enter time in seconds</label>
+							<input type = "text" id='myInput' value = {input} onChange = {handleInputChange} />
 							</form>
 
 							<div class="button-section">
             					<button onClick={startGame} disabled={isTimeRunning}> Start </button>
-            					<button class=" button quit-button" onClick={endGame} > Quit </button>
+            					<button class="button quit-button" onClick={endGame} > Quit </button>
+            					<button class="button quit-button" onClick={clearGame}> Clear </button>
 							</div>
 						</div>
 				</div>
