@@ -8,7 +8,6 @@ function App() {
     const [isTimeRunning, setIsTimeRunning] = useState(false)
     const [wordCount, setWordCount] = useState(0)
     const textBoxRef = useRef(null)
-    
 
 	const handleInputChange = (event) => {
 		setValue(event.target.value);
@@ -27,7 +26,7 @@ function App() {
     
     function startGame() {
         if (setIsTimeRunning(false)) {setText("")};
-		if (wordCount != 0) {setWordCount(0)};
+		if (wordCount !== 0) {setWordCount(0)};
 		setIsTimeRunning(true)
         setTimeRemaining(input)
         setText("")
@@ -35,13 +34,11 @@ function App() {
         textBoxRef.current.focus()
     }
 
-    
     function endGame() {
         setIsTimeRunning(false)
 		setTimeRemaining(0)
 		setWordCount(calculateWordCount(text))
     }
-
 
 	function clearGame() {
 		setValue(0)
@@ -62,18 +59,18 @@ function App() {
     }, [timeRemaining, isTimeRunning,input])
     
 	let wordCountFactor = 0;
-	if (input === 0) { wordCountFactor = 0 } else { wordCountFactor = 60/input};
+	if (input == 0) { wordCountFactor = 0 } else { wordCountFactor = 60/input};
 
     return (
         <div>
 			<div class="jumbotron jumbotron-fluid">
 				<div class="container">
-            		<h1> Typing Game</h1>
+            		<h1> Typing Speed Test</h1>
 						<div class = "header">
-						<h3> Enter how many seconds you would like to type, and then press start to begin! </h3>
+						<h3> Enter a time (in seconds) for how long you would like to type, and then press start to begin! </h3>
 
 							<form id="myInput"> <label> Enter time in seconds</label>
-							<input type = "text" id='myInput' value = {input} onChange = {handleInputChange} />
+							<input type = "text" placeholder="0" id='myInput' value = {input} onChange = {handleInputChange} />
 							</form>
 
 							<div class="button-section">
@@ -91,6 +88,7 @@ function App() {
                 onChange={handleChange}
                 value={text}
                 disabled={!isTimeRunning}
+				placeholder="begin typing here"
             />
 		<div class = "game-details">
             <h1>Word count: {wordCount}</h1>
