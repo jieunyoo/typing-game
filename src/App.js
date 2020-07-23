@@ -13,7 +13,7 @@ function App() {
 
 	const handleInputChange = (event) => {
 		setValue(event.target.value);
-		console.log(event.target.value);
+		//console.log(event.target.value);
 	}
 
     function handleChange(e) {
@@ -63,6 +63,7 @@ function App() {
         setIsTimeRunning(false)
 		setTimeRemaining(0)
         setWordCount(0)
+		setText('');
 	}
 
 
