@@ -93,9 +93,9 @@ function App() {
 							</form>
 
 							<div class="button-section">
-            					<button onClick={startGame} disabled={isTimeRunning}> Start </button>
+            					<button class="button start-button" onClick={startGame} disabled={isTimeRunning}> Start </button>
             					<button class="button quit-button" onClick={endGame} > Quit </button>
-            					<button class="button quit-button" onClick={clearGame}> Clear </button>
+            					<button class="button clear-button" onClick={clearGame}> Clear </button>
 							</div>
 						</div>
 				</div>

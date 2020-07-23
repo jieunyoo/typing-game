@@ -14,7 +14,7 @@ html, body {
 	padding: 20px 0px 0px 0px;
 	font-weight:bold;
 	text-align:center;
-	color:#000080;
+	color:black;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -39,7 +39,6 @@ html, body {
 }
 button {
     display: block;
-	background-color: #008CBA;
 	margin: 10px auto;
 	width: 6em;
 	color:white;
@@ -48,8 +47,16 @@ button {
     text-transform: uppercase;
 }
 
+.start-button {
+	background-color:#5cb85c;
+}
+
 .quit-button{
 	background-color: #f44336;
+}
+
+.clear-button {
+	background-color:#f0ad4e;
 }
 
 button:disabled {
