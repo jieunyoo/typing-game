@@ -7,6 +7,8 @@ function App() {
     const [timeRemaining, setTimeRemaining] = useState(input)
     const [isTimeRunning, setIsTimeRunning] = useState(false)
     const [wordCount, setWordCount] = useState(0)
+	const [typingLevel, setTypingLevel] = useState("")
+
     const textBoxRef = useRef(null)
 
 	const handleInputChange = (event) => {
@@ -23,6 +25,21 @@ function App() {
         const wordsArr = text.trim().split(" ")
         return wordsArr.filter(word => word !== "").length
     }
+
+	function typingSkill(typingSpeed) {
+		if (typingSpeed > 0 && typingSpeed <= 36) {
+			setTypingLevel('Needs improvement')
+		}
+		else if (typingSpeed > 36 && typingSpeed <= 45) {
+			setTypingLevel('average')
+		}
+		else if (typingSpeed > 45 && typingSpeed <= 60) {
+			setTypingLevel('good')
+		}
+		else if (typingSpeed > 60 && typingSpeed < 10000) {
+			setTypingLevel('excellent!')
+		}
+	}
     
     function startGame() {
         if (setIsTimeRunning(false)) {setText("")};
@@ -38,6 +55,7 @@ function App() {
         setIsTimeRunning(false)
 		setTimeRemaining(0)
 		setWordCount(calculateWordCount(text))
+		typingSkill(typingSpeed)
     }
 
 	function clearGame() {
@@ -60,6 +78,7 @@ function App() {
     
 	let wordCountFactor = 0;
 	if (input == 0) { wordCountFactor = 0 } else { wordCountFactor = 60/input};
+	let typingSpeed = wordCountFactor*wordCount;
 
     return (
         <div>
@@ -70,7 +89,7 @@ function App() {
 						<h3> Enter a time (in seconds) for how long you would like to type, and then press start to begin! </h3>
 
 							<form id="myInput"> <label> Enter time in seconds</label>
-							<input type = "text" placeholder="0" id='myInput' value = {input} onChange = {handleInputChange} />
+							<input type = "text" placeholder="0" value = {input} onChange = {handleInputChange} />
 							</form>
 
 							<div class="button-section">
@@ -93,13 +112,16 @@ function App() {
 		<div class = "game-details">
             <h1>Word count: {wordCount}</h1>
 			<h1> Words per minute: { wordCountFactor*wordCount} </h1>
+
 		</div>
 
 		<div class="jumbotron jumbotron-fluid">
 			<div class="container">
            		<h1> Your Results</h1>
 					<div class = "header">
-						Your typing level is: 
+						Your typing level is: {typingLevel}
+
+
 					</div>
 			</div>
 	
@@ -115,19 +137,19 @@ function App() {
     				<tbody>
       				<tr>
         			<td>Excellent</td>
-        			<td> 60+</td>
+        			<td> 61+</td>
       				</tr>
       				<tr>
         			<td>Good</td>
-        			<td>41-60</td>
+        			<td>46-60</td>
       				</tr>
       				<tr>
         			<td>Fair</td>
-        			<td>36-40</td>
+        			<td>37-45</td>
       				</tr>
       				<tr>
-        			<td>needs Improvement</td>
-        			<td>0-39</td>
+        			<td>Needs Improvement</td>
+        			<td>0-36</td>
       				</tr>
     				</tbody>
   			</table>
