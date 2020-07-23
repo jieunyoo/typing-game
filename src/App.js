@@ -27,7 +27,7 @@ function App() {
     
     function startGame() {
         if (setIsTimeRunning(false)) {setText("")};
-		
+		if (wordCount != 0) {setWordCount(0)};
 		setIsTimeRunning(true)
         setTimeRemaining(input)
         setText("")
@@ -39,7 +39,7 @@ function App() {
     function endGame() {
         setIsTimeRunning(false)
 		setTimeRemaining(0)
-        setWordCount(0)
+		setWordCount(calculateWordCount(text))
     }
 
 
