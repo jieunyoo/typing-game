@@ -94,7 +94,47 @@ function App() {
             <h1>Word count: {wordCount}</h1>
 			<h1> Words per minute: { wordCountFactor*wordCount} </h1>
 		</div>
-        </div>
+
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+           		<h1> Your Results</h1>
+					<div class = "header">
+						Your typing level is: 
+					</div>
+			</div>
+	
+			<div class="container">
+  				<table class="table table-bordered">
+    				<thead>
+      				<tr>
+        			<th> Level</th>
+        			<th>Words Per Minute</th>
+      				</tr>
+    				</thead>
+
+    				<tbody>
+      				<tr>
+        			<td>Excellent</td>
+        			<td> 60+</td>
+      				</tr>
+      				<tr>
+        			<td>Good</td>
+        			<td>41-60</td>
+      				</tr>
+      				<tr>
+        			<td>Fair</td>
+        			<td>36-40</td>
+      				</tr>
+      				<tr>
+        			<td>needs Improvement</td>
+        			<td>0-39</td>
+      				</tr>
+    				</tbody>
+  			</table>
+		</div>
+	</div>
+
+ 	</div>
     )
 }
 
