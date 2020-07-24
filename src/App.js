@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from "react"
+import {ButtonToolBar, Button, Table} from 'react-bootstrap';
 
 function App() {
     
@@ -120,14 +121,12 @@ function App() {
 			<div class="container">
            		<h1> Your Results</h1>
 					<div class = "header">
-						Your typing level is: {typingLevel}
-
-
+						<h3>Your typing level is: {typingLevel}</h3>
 					</div>
 			</div>
 	
 			<div class="container">
-  				<table class="table table-bordered">
+				<Table Responsive striped bordered hover>
     				<thead>
       				<tr>
         			<th> Level</th>
@@ -137,23 +136,23 @@ function App() {
 
     				<tbody>
       				<tr>
-        			<td>Excellent</td>
-        			<td> 61+</td>
+        				<td>Excellent</td>
+        				<td> 61+</td>
       				</tr>
       				<tr>
-        			<td>Good</td>
-        			<td>46-60</td>
+        				<td>Good</td>
+        				<td>46-60</td>
       				</tr>
       				<tr>
-        			<td>Fair</td>
-        			<td>37-45</td>
+        				<td>Fair</td>
+        				<td>37-45</td>
       				</tr>
       				<tr>
-        			<td>Needs Improvement</td>
-        			<td>0-36</td>
+        				<td>Needs Improvement</td>
+        				<td>0-36</td>
       				</tr>
     				</tbody>
-  			</table>
+  			</Table>
 		</div>
 	</div>
 
