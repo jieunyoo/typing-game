@@ -84,7 +84,7 @@ function App() {
 
     return (
         <div>
-			<div class="jumbotron jumbotron-fluid">
+			<div class="jumbotron jumbotron-fluid bg-dark text-white">
 				<div class="container">
             		<h1> Typing Speed Test</h1>
 						<div class = "header">
@@ -117,16 +117,15 @@ function App() {
 
 		</div>
 
-		<div class="jumbotron jumbotron-fluid">
+		<div class="jumbotron jumbotron-fluid bg-dark text-white">
 			<div class="container">
            		<h1> Your Results</h1>
 					<div class = "header">
-						<h3>Your typing level is: {typingLevel}</h3>
+						<h3>Your score level: {typingLevel}</h3>
 					</div>
 			</div>
-	
-			<div class="container">
-				<Table Responsive striped bordered hover>
+				<div class="container">
+				<Table Responsive bgColor="white">
     				<thead>
       				<tr>
         			<th> Level</th>
