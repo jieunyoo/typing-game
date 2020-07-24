@@ -91,7 +91,7 @@ function App() {
 						<h3> Enter a time (in seconds) for how long you would like to type, and then press start to begin! </h3>
 
 							<form id="myInput"> <label> Enter time in seconds</label>
-							<input type = "text" placeholder="0" value = {input} onChange = {handleInputChange} />
+							<input type = "number" min="0" oninput="this.value = Math.abs(this.value)" placeholder="0" value = {input} onChange = {handleInputChange} />
 							</form>
 
 							<div class="button-section">
